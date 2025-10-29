@@ -1,6 +1,15 @@
 import { Box, Button, Icon, Text } from '@chakra-ui/react'
+import resumePdf from '../assets/Resume.pdf'
 
 function Resume() {
+  const handleDownload = () => {
+    const link = document.createElement('a')
+    link.href = resumePdf
+    link.download = 'Resume_Frank_Peter-Lee_Edouard.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
   return (
     <Box id="resume" py={20} px={16} bg="gray.900" position="relative" overflow="hidden">
       {/* Floating Green Diamond */}
@@ -150,6 +159,7 @@ function Resume() {
                 boxShadow: '0 10px 30px rgba(177, 114, 234, 0.4)'
               }}
               transition="all 0.3s"
+              onClick={handleDownload}
             >
               Download Resume (PDF)
             </Button>
@@ -157,7 +167,7 @@ function Resume() {
 
           {/* Update Information */}
           <Text fontSize="sm" color="gray.400" textAlign="center">
-            Last updated: October 2025
+            Last updated: October 2024
           </Text>
         </Box>
       </Box>
