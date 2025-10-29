@@ -1,5 +1,5 @@
 import { Box, Flex, Text, Button, Badge, Icon, HStack } from '@chakra-ui/react'
-import peetImage from '../assets/images/Peet.jpeg'
+import Frank from '../assets/images/Frank.jpg'
 
 function Hero() {
   return (
@@ -115,7 +115,7 @@ function Hero() {
                 color: 'transparent'
               }}
             >
-              Franck Peter-Lee Edouard
+              Frank Peter-Lee Edouard
             </Text>
           </Box>
 
@@ -139,6 +139,12 @@ function Hero() {
                   <path fill="currentColor" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                 </Icon>
               }
+              onClick={() => {
+                const element = document.getElementById('contact');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
             >
               Get In Touch
             </Button>
@@ -150,6 +156,12 @@ function Hero() {
               borderRadius="md"
               _hover={{ transform: 'translateY(-2px)', boxShadow: '0 10px 30px rgba(255, 255, 255, 0.2)' }}
               transition="all 0.3s"
+              onClick={() => {
+                const element = document.getElementById('resume');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
             >
               View Resume
             </Button>
@@ -213,7 +225,7 @@ function Hero() {
               overflow="hidden"
             >
               <img 
-                src={peetImage} 
+                src={Frank} 
                 alt="Franck Edouard Peter-Lee"
                 style={{
                   width: '100%',
