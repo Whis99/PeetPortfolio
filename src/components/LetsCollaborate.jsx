@@ -86,6 +86,8 @@ function LetsCollaborate() {
         <Flex gap={6} justify="center" flexWrap="wrap" mb={12}>
           {/* Email Button */}
           <Button
+            as="a"
+            href="mailto:teamslgfred@gmail.com"
             size="lg"
             px={8}
             py={6}
@@ -106,6 +108,7 @@ function LetsCollaborate() {
               boxShadow: '0 10px 30px rgba(0, 206, 244, 0.4)'
             }}
             transition="all 0.3s"
+            textDecoration="none"
           >
             teamslgfred@gmail.com
           </Button>
@@ -153,7 +156,7 @@ function LetsCollaborate() {
       {/* Footer */}
       <Box textAlign="center">
         <Text fontSize="sm" color="gray.500">
-          © 2025 Franck Edouard Peter-Lee. All rights reserved.
+          © 2025 Frank Edouard Peter-Lee. All rights reserved.
         </Text>
       </Box>
     </Box>
