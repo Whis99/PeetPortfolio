@@ -5,7 +5,7 @@ function Skills() {
     'Amazon Connect',
     'Artificial Intelligence',
     'Call Center Administration',
-    'Contact Screen',
+    'Robotic',
     'AWS Lambda',
     'Solution Architecture',
     'Information Technology Infrastructure',
