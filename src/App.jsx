@@ -1,23 +1,23 @@
 import { Box } from '@chakra-ui/react'
-import Hero from './components/Hero'
-import AboutMe from './components/AboutMe'
-import MyVision from './components/MyVision'
-import Skills from './components/Skills'
-import FeaturedProjects from './components/FeaturedProjects'
-import Resume from './components/Resume'
-import LetsCollaborate from './components/LetsCollaborate'
+import { Routes, Route, Outlet } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import Home from './pages/Home'
+import About from './pages/About'
+import Vision from './pages/Vision'
+import SkillsPage from './pages/SkillsPage'
+import Work from './pages/Work'
+import ResumePage from './pages/ResumePage'
+import Contact from './pages/Contact'
 
-function App() {
+function Layout() {
   return (
-    <Box minH="100vh" bg="gray.900" position="relative" overflow="hidden">
-      <Hero />
-      <AboutMe />
-      <MyVision />
-      <Skills />
-      <FeaturedProjects />
-      <Resume />
-      <LetsCollaborate />
-
+    <Box minH="100vh" bg="gray.900" color="gray.100">
+      <Navbar />
+      <Box as="main">
+        <Outlet />
+      </Box>
+      <Footer />
       <style>{`
         @keyframes float {
           0%, 100% {
@@ -55,6 +55,22 @@ function App() {
         }
       `}</style>
     </Box>
+  )
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/vision" element={<Vision />} />
+        <Route path="/skills" element={<SkillsPage />} />
+        <Route path="/work" element={<Work />} />
+        <Route path="/resume" element={<ResumePage />} />
+        <Route path="/contact" element={<Contact />} />
+      </Route>
+    </Routes>
   )
 }
 

@@ -2,7 +2,7 @@ import { Box, Text } from '@chakra-ui/react'
 
 function MyVision() {
   return (
-    <Box id="vision" py={20} px={16} bg="gray.900" position="relative" overflow="hidden">
+    <Box id="vision" py={{ base: 16, md: 20 }} px={{ base: 6, md: 16 }} bg="gray.900" position="relative" overflow="hidden">
       {/* Floating Green Diamond */}
       <Box
         position="absolute"
@@ -15,6 +15,7 @@ function MyVision() {
         transform="rotate(45deg)"
         animation="rotate 10s linear infinite"
         zIndex={1}
+        display={{ base: 'none', md: 'block' }}
       />
 
       <Box maxW="1400px" mx="auto" position="relative" zIndex={2}>

@@ -20,7 +20,7 @@ function Skills() {
   ]
 
   return (
-    <Box id="skills" py={20} px={16} bg="gray.900" position="relative" overflow="hidden">
+    <Box id="skills" py={{ base: 16, md: 20 }} px={{ base: 6, md: 16 }} bg="gray.900" position="relative" overflow="hidden">
       {/* Floating Green Diamond */}
       <Box
         position="absolute"
@@ -67,7 +67,7 @@ function Skills() {
           {skills.map((skill) => (
             <Box
               key={skill}
-              minW="200px"
+              minW={{ base: '140px', sm: '180px', md: '200px' }}
               maxW="300px"
               p={6}
               bg="gray.800"

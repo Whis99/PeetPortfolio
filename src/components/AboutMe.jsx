@@ -2,7 +2,7 @@ import { Box, Flex, Text } from '@chakra-ui/react'
 
 function AboutMe() {
   return (
-    <Box id="about" py={20} px={16} bg="gray.900" position="relative" overflow="hidden">
+    <Box id="about" py={{ base: 16, md: 20 }} px={{ base: 6, md: 16 }} bg="gray.900" position="relative" overflow="hidden">
       {/* Floating Green Square */}
       <Box
         position="absolute"
@@ -17,11 +17,24 @@ function AboutMe() {
         zIndex={1}
       />
 
-      <Flex gap={16} align="flex-start" maxW="1400px" mx="auto" position="relative" zIndex={2}>
+      <Flex
+        direction={{ base: 'column', lg: 'row' }}
+        gap={{ base: 12, lg: 16 }}
+        align={{ base: 'center', lg: 'flex-start' }}
+        maxW="1400px"
+        mx="auto"
+        position="relative"
+        zIndex={2}
+      >
         {/* Left Column - Text Content */}
-        <Flex flex={1} direction="column" gap={6}>
+        <Flex
+          flex={1}
+          direction="column"
+          gap={6}
+          maxW={{ base: '100%', lg: '600px' }}
+        >
           {/* Section Title */}
-          <Box>
+          <Box textAlign={{ base: 'center', md: 'left' }}>
             <Text 
               fontSize="5xl" 
               fontWeight="bold" 
@@ -39,6 +52,7 @@ function AboutMe() {
             <Box 
               w="100px" 
               h="2px" 
+              mx={{ base: 'auto', md: 0 }}
               style={{
                 background: 'linear-gradient(to right, #00CEF4, #B172EA)'
               }}
@@ -46,14 +60,14 @@ function AboutMe() {
           </Box>
 
           {/* Paragraphs */}
-          <Text fontSize="lg" color="gray.300" lineHeight="1.8" mt={6}>
+          <Text fontSize="lg" color="gray.300" lineHeight="1.8" mt={6} textAlign={{ base: 'center', md: 'left' }}>
             I am an ambitious and motivated student pursuing a Bachelor of Science in 
             Electrical Engineering with a concentration in Electronics. With a strong 
             foundation in mathematics, physics, and computer science, I am passionate 
             about the intersection of hardware and software, aiming to build a career as 
             an Embedded Systems Engineer.
           </Text>
-          <Text fontSize="lg" color="gray.300" lineHeight="1.8">
+          <Text fontSize="lg" color="gray.300" lineHeight="1.8" textAlign={{ base: 'center', md: 'left' }}>
             My vision is to design and develop intelligent, efficient, and reliable 
             systems that drive the next generation of technology — from consumer 
             electronics to industrial automation and IoT devices. I combine my technical 
@@ -64,7 +78,7 @@ function AboutMe() {
         </Flex>
 
         {/* Right Column - Skill Cards */}
-        <Flex flex={1} direction="column" gap={6}>
+        <Flex flex={1} direction="column" gap={6} w="100%">
           {/* Card 1: Circuit Design */}
           <Flex
             p={6}
@@ -74,6 +88,7 @@ function AboutMe() {
             borderColor="#00CEF4"
             alignItems="center"
             gap={6}
+            flexDirection={{ base: 'column', md: 'row' }}
             transition="all 0.3s"
             _hover={{
               transform: 'translateY(-5px)',
@@ -95,7 +110,7 @@ function AboutMe() {
             >
               <Text fontSize="40px" filter="brightness(0) invert(1)">⚡</Text>
             </Box>
-            <Flex direction="column">
+            <Flex direction="column" textAlign={{ base: 'center', md: 'left' }} align={{ base: 'center', md: 'flex-start' }}>
               <Text fontSize="xl" fontWeight="bold" color="white" mb={1}>
                 Circuit Design
               </Text>
@@ -114,6 +129,7 @@ function AboutMe() {
             borderColor="#B172EA"
             alignItems="center"
             gap={6}
+            flexDirection={{ base: 'column', md: 'row' }}
             transition="all 0.3s"
             _hover={{
               transform: 'translateY(-5px)',
@@ -135,7 +151,7 @@ function AboutMe() {
             >
               <Text fontSize="40px" filter="brightness(0) invert(1)">💡</Text>
             </Box>
-            <Flex direction="column">
+            <Flex direction="column" textAlign={{ base: 'center', md: 'left' }} align={{ base: 'center', md: 'flex-start' }}>
               <Text fontSize="xl" fontWeight="bold" color="white" mb={1}>
                 Power Systems
               </Text>
@@ -154,6 +170,7 @@ function AboutMe() {
             borderColor="#B172EA"
             alignItems="center"
             gap={6}
+            flexDirection={{ base: 'column', md: 'row' }}
             transition="all 0.3s"
             _hover={{
               transform: 'translateY(-5px)',
@@ -175,7 +192,7 @@ function AboutMe() {
             >
               <Text fontSize="40px" filter="brightness(0) invert(1)">⚙️</Text>
             </Box>
-            <Flex direction="column">
+            <Flex direction="column" textAlign={{ base: 'center', md: 'left' }} align={{ base: 'center', md: 'flex-start' }}>
               <Text fontSize="xl" fontWeight="bold" color="white" mb={1}>
                 Automation
               </Text>

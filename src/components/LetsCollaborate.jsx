@@ -1,8 +1,11 @@
 import { Box, Flex, Text, Button, Icon } from '@chakra-ui/react'
+import { useNavigate } from 'react-router-dom'
 
 function LetsCollaborate() {
+  const navigate = useNavigate()
+
   return (
-    <Box id="contact" py={20} px={16} bg="gray.900" position="relative" overflow="hidden">
+    <Box id="contact" py={{ base: 16, md: 20 }} px={{ base: 6, md: 16 }} bg="gray.900" position="relative" overflow="hidden">
       {/* Background Shapes */}
       {/* Top-Left: Rounded Square */}
       <Box
@@ -109,6 +112,8 @@ function LetsCollaborate() {
             }}
             transition="all 0.3s"
             textDecoration="none"
+            w={{ base: '100%', sm: 'auto' }}
+            textAlign="center"
           >
             teamslgfred@gmail.com
           </Button>
@@ -133,32 +138,14 @@ function LetsCollaborate() {
               boxShadow: '0 10px 30px rgba(255, 255, 255, 0.3)'
             }}
             transition="all 0.3s"
-            onClick={() => {
-              const element = document.getElementById('resume');
-              if (element) {
-                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }
-            }}
+            onClick={() => navigate('/resume')}
+            w={{ base: '100%', sm: 'auto' }}
           >
             View Resume
           </Button>
         </Flex>
       </Box>
 
-      {/* Footer Separator */}
-      <Box 
-        w="100%"
-        h="1px"
-        bg="gray.700"
-        mb={8}
-      />
-
-      {/* Footer */}
-      <Box textAlign="center">
-        <Text fontSize="sm" color="gray.500">
-          © 2025 Frank Edouard Peter-Lee. All rights reserved.
-        </Text>
-      </Box>
     </Box>
   )
 }

@@ -11,7 +11,7 @@ function Resume() {
     document.body.removeChild(link)
   }
   return (
-    <Box id="resume" py={20} px={16} bg="gray.900" position="relative" overflow="hidden">
+    <Box id="resume" py={{ base: 16, md: 20 }} px={{ base: 6, md: 16 }} bg="gray.900" position="relative" overflow="hidden">
       {/* Floating Green Diamond */}
       <Box
         position="absolute"
@@ -69,7 +69,7 @@ function Resume() {
         <Box
           maxW="600px"
           mx="auto"
-          p={10}
+          p={{ base: 8, md: 10 }}
           bg="gray.800"
           borderRadius="xl"
           position="relative"
@@ -100,8 +100,8 @@ function Resume() {
           {/* Download Icon Circle */}
           <Box display="flex" justifyContent="center" mb={6}>
             <Box
-              w="120px"
-              h="120px"
+              w={{ base: '90px', md: '120px' }}
+              h={{ base: '90px', md: '120px' }}
               borderRadius="full"
               display="flex"
               alignItems="center"
@@ -160,6 +160,7 @@ function Resume() {
               }}
               transition="all 0.3s"
               onClick={handleDownload}
+              w={{ base: '100%', sm: 'auto' }}
             >
               Download Resume (PDF)
             </Button>

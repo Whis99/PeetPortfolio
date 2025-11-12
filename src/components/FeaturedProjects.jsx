@@ -88,7 +88,7 @@ function FeaturedProjects() {
 
   return (
     <>
-      <Box id="work" py={20} px={16} bg="gray.900" position="relative" overflow="hidden">
+      <Box id="work" py={{ base: 16, md: 20 }} px={{ base: 6, md: 16 }} bg="gray.900" position="relative" overflow="hidden">
         {/* Floating Green Rectangle */}
         <Box
           position="absolute"
@@ -136,7 +136,7 @@ function FeaturedProjects() {
               <Box
                 key={index}
                 flex="1"
-                minW="280px"
+                minW={{ base: '100%', sm: '260px', md: '280px' }}
                 maxW="380px"
                 bg="gray.800"
                 borderRadius="lg"
@@ -179,6 +179,7 @@ function FeaturedProjects() {
                 color="white"
                 _hover={{ transform: 'translateY(-2px)', boxShadow: '0 10px 30px rgba(0,0,0,0.2)' }}
                 transition="all 0.3s"
+                w={{ base: '100%', sm: 'auto' }}
               >
                 {showAll ? 'View less' : 'View more'}
               </Button>

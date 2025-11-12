@@ -1,74 +1,30 @@
 import { Box, Flex, Text, Button, Badge, Icon, HStack } from '@chakra-ui/react'
+import { useNavigate } from 'react-router-dom'
 import Frank from '../assets/images/Frank.jpg'
 
 function Hero() {
-  return (
-    <>
-      {/* Navigation Bar */}
-      <Flex
-        as="nav"
-        justify="space-between"
-        align="center"
-        px={16}
-        py={6}
-        position="absolute"
-        top={0}
-        left={0}
-        right={0}
-        zIndex={10}
-      >
-        <Text 
-          fontSize="xl" 
-          fontWeight="bold"
-          style={{
-            background: 'linear-gradient(to right, #00CEF4, #B172EA)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            color: 'transparent'
-          }}
-        >
-          PORTFOLIO
-        </Text>
-        <HStack spacing={12}>
-          {['About', 'Skills', 'Work', 'Resume', 'Contact'].map((item) => (
-            <Text
-              key={item}
-              color="white"
-              cursor="pointer"
-              fontWeight="bold"
-              _hover={{ color: 'cyan.400' }}
-              transition="all 0.3s"
-              onClick={() => {
-                const sectionId = item === 'Contact' ? 'contact' : item.toLowerCase();
-                const element = document.getElementById(sectionId);
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-              }}
-            >
-              {item}
-            </Text>
-          ))}
-        </HStack>
-      </Flex>
+  const navigate = useNavigate()
 
-      {/* Hero Section */}
+  return (
+    <Box>
       <Flex
         minH="100vh"
-        align="center"
-        px={16}
-        gap={16}
+        direction={{ base: 'column', md: 'row' }}
+        align={{ base: 'center', md: 'center' }}
+        px={{ base: 6, md: 16 }}
+        gap={{ base: 12, md: 16 }}
         position="relative"
-        pt={20}
+        pt={{ base: 20, md: 24 }}
+        textAlign={{ base: 'center', md: 'left' }}
       >
         {/* Left Panel */}
         <Flex
           flex={1}
           direction="column"
           gap={6}
-          maxW="600px"
+          maxW={{ base: '100%', md: '600px' }}
           zIndex={2}
+          align={{ base: 'center', md: 'flex-start' }}
         >
           {/* Job Title Badge */}
           <Badge
@@ -125,7 +81,7 @@ function Hero() {
           </Text>
 
           {/* CTA Buttons */}
-          <Flex gap={4} mt={8}>
+          <Flex gap={4} mt={8} justify={{ base: 'center', md: 'flex-start' }} flexWrap="wrap">
             <Button
               bgGradient="linear(to-r, blue.500, purple.600)"
               color="white"
@@ -139,12 +95,7 @@ function Hero() {
                   <path fill="currentColor" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                 </Icon>
               }
-              onClick={() => {
-                const element = document.getElementById('contact');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-              }}
+              onClick={() => navigate('/contact')}
             >
               Get In Touch
             </Button>
@@ -156,19 +107,14 @@ function Hero() {
               borderRadius="md"
               _hover={{ transform: 'translateY(-2px)', boxShadow: '0 10px 30px rgba(255, 255, 255, 0.2)' }}
               transition="all 0.3s"
-              onClick={() => {
-                const element = document.getElementById('resume');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-              }}
+              onClick={() => navigate('/resume')}
             >
               View Resume
             </Button>
           </Flex>
 
           {/* Social Icons */}
-          <HStack spacing={6} mt={8}>
+          <HStack spacing={6} mt={8} justify={{ base: 'center', md: 'flex-start' }}>
             {[
               { icon: 'P', color: 'cyan.400' },
               { icon: 'in', color: 'cyan.400' },
@@ -201,12 +147,18 @@ function Hero() {
         </Flex>
 
         {/* Right Panel */}
-        <Flex flex={1} justify="center" align="center" position="relative">
+        <Flex
+          flex={1}
+          justify="center"
+          align="center"
+          position="relative"
+          w={{ base: '100%', md: 'auto' }}
+        >
           {/* Glowing Image Frame */}
           <Box
             position="relative"
-            w="400px"
-            h="500px"
+            w={{ base: '280px', sm: '320px', md: '400px' }}
+            h={{ base: '360px', sm: '420px', md: '500px' }}
             borderRadius="lg"
             overflow="hidden"
             boxShadow="0 0 60px rgba(139, 92, 246, 0.5), 0 0 100px rgba(56, 189, 248, 0.3)"
@@ -313,28 +265,30 @@ function Hero() {
           position="absolute"
           top="20%"
           right="10%"
-          w="400px"
-          h="400px"
+          w={{ base: '220px', md: '400px' }}
+          h={{ base: '220px', md: '400px' }}
           borderRadius="full"
           bg="purple.500"
           opacity={0.1}
           filter="blur(80px)"
           zIndex={0}
+          display={{ base: 'none', md: 'block' }}
         />
         <Box
           position="absolute"
           bottom="20%"
           left="10%"
-          w="300px"
-          h="300px"
+          w={{ base: '200px', md: '300px' }}
+          h={{ base: '200px', md: '300px' }}
           borderRadius="full"
           bg="blue.500"
           opacity={0.1}
           filter="blur(80px)"
           zIndex={0}
+          display={{ base: 'none', md: 'block' }}
         />
       </Flex>
-    </>
+    </Box>
   )
 }
 
